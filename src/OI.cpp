@@ -13,6 +13,7 @@ using namespace frc;
 OI::OI() :
 		driveStickLeft(new Joystick(2)), driveStickRight(new Joystick(1)), operatorStick(
 				new Joystick(0)) {
+	reversed = true;
 	shooterButtons();
 	driveButtons();
 	winchButtons();
@@ -30,6 +31,7 @@ OI::OI() :
 	//togRev->WhenPressed(new ToggleReverse());
 
 }
+
 
 void OI::driveButtons() {
 	Button* toggleDriveDirection = new JoystickButton(driveStickRight, 3);
@@ -53,11 +55,17 @@ void OI::shooterButtons() {
 }
 
 Joystick* OI::getDriveStickLeft() {
-	return driveStickLeft;
+	if(reversed)
+		return driveStickLeft;
+	else
+		return driveStickRight;
 }
 
 Joystick* OI::getDriveStickRight() {
-	return driveStickRight;
+	if(reversed)
+		return driveStickRight;
+	else
+		return driveStickLeft;
 }
 
 Joystick* OI::getOperatorStick() {

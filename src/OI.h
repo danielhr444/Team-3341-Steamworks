@@ -9,6 +9,8 @@ private:
 	Joystick* driveStickLeft;
 	Joystick* driveStickRight;
 	Joystick* operatorStick;
+
+
 	//Button* stopWinchPIDButton;
 	//Button* positionControl;
 	//Button* shooterButton;
@@ -21,6 +23,7 @@ public:
 	OI();
 	~OI();
 
+	bool reversed;
 	Joystick* getDriveStickLeft();
 	Joystick* getDriveStickRight();
 	Joystick* getOperatorStick();

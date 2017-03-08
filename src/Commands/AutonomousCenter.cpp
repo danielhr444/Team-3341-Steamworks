@@ -7,7 +7,7 @@
 #include "GetRobotModelData.h"
 #include "../CommandBase.h"
 
-AutonomousCenter::AutonomousCenter(bool left) {
+AutonomousCenter::AutonomousCenter() {
 	AddSequential(new Drive(90,0.5));
 	AddSequential(new Delay(2)); // Delay for 2 seconds
 	AddSequential(new GetCV(&distance, &azimuth)); // Get CV Values

@@ -1,4 +1,5 @@
 #include "SetDriveReverse.h"
+#include <OI.h>
 
 SetDriveReverse::SetDriveReverse() {
 	done = false;
@@ -7,6 +8,7 @@ SetDriveReverse::SetDriveReverse() {
 // Called just before this Command runs the first time
 void SetDriveReverse::Initialize() {
 	done = false;
+	oi->reversed = !oi->reversed;
 	drive->reverseDrive();
 }
 
