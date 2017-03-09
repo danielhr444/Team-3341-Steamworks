@@ -38,13 +38,13 @@ public:
 				CameraServer::GetInstance()->StartAutomaticCapture(
 						"USB Camera 0", 0);
 		// Set the resolution
-		camera.SetResolution(640, 480);
+		camera.SetResolution(320, 240);
 
 		// Get a CvSink. This will capture Mats from the Camera
 		cs::CvSink cvSink = CameraServer::GetInstance()->GetVideo();
 		// Setup a CvSource. This will send images back to the Dashboard
 		cs::CvSource outputStream = CameraServer::GetInstance()->PutVideo(
-				"USB Camera 0", 640, 480);
+				"USB Camera 0", 320, 240);
 
 		// Mats are very memory expensive. Lets reuse this Mat.
 		cv::Mat mat;
@@ -73,13 +73,13 @@ public:
 						"USB Camera 1", 1);
 
 		// Set the resolution
-		camera1.SetResolution(640, 480);
+		camera1.SetResolution(320, 240);
 
 		// Get a CvSink. This will capture Mats from the Camera
 		cs::CvSink cvSink = CameraServer::GetInstance()->GetVideo();
 		// Setup a CvSource. This will send images back to the Dashboard
 		cs::CvSource outputStream = CameraServer::GetInstance()->PutVideo(
-				"USB Camera 1", 640, 480);
+				"USB Camera 1", 320, 240);
 
 		// Mats are very memory expensive. Lets reuse this Mat.
 		cv::Mat mat;
@@ -105,8 +105,8 @@ public:
 
 		CommandBase::initialize();
 
-		chooser.AddDefault("Autonomous Left", new AutonomousSide(true));
-		chooser.AddObject("Autonomous Right", new AutonomousSide(false));
+		chooser.AddDefault("Autonomous Left", new AutonomousSide(true)); // true signifies left side
+		chooser.AddObject("Autonomous Right", new AutonomousSide(false)); // false signifies right side
 		chooser.AddObject("Autonomous Center", new AutonomousCenter());
 
 		frc::SmartDashboard::PutData("Auto Modes", &chooser);
@@ -141,20 +141,20 @@ public:
 		CommandBase::drive->gyro->periodicProcessing(startupTime);
 		frc::Scheduler::GetInstance()->Run();
 
-		frc::SmartDashboard::PutNumber("Gyro",
-				CommandBase::drive->getGyroAngle());
-		frc::SmartDashboard::PutNumber("EncoderTest",
-				CommandBase::drive->getLeftEncoderDistance());
-		frc::SmartDashboard::PutNumber("EncoderRight",
-				CommandBase::drive->getRightEncoderDistance());
-		frc::SmartDashboard::PutBoolean("CVGearFound",
-				NetworkTablesInterface::gearFound());
-		frc::SmartDashboard::PutNumber("CVGearDistance",
-				NetworkTablesInterface::getGearDistance());
-		frc::SmartDashboard::PutNumber("CVGearAltitude",
-				NetworkTablesInterface::getGearAltitude());
-		frc::SmartDashboard::PutNumber("CVGearAzimuth",
-				NetworkTablesInterface::getGearAzimuth());
+//		frc::SmartDashboard::PutNumber("Gyro",
+//				CommandBase::drive->getGyroAngle());
+//		frc::SmartDashboard::PutNumber("EncoderTest",
+//				CommandBase::drive->getLeftEncoderDistance());
+//		frc::SmartDashboard::PutNumber("EncoderRight",
+//				CommandBase::drive->getRightEncoderDistance());
+//		frc::SmartDashboard::PutBoolean("CVGearFound",
+//				NetworkTablesInterface::gearFound());
+//		frc::SmartDashboard::PutNumber("CVGearDistance",
+//				NetworkTablesInterface::getGearDistance());
+//		frc::SmartDashboard::PutNumber("CVGearAltitude",
+//				NetworkTablesInterface::getGearAltitude());
+//		frc::SmartDashboard::PutNumber("CVGearAzimuth",
+//				NetworkTablesInterface::getGearAzimuth());
 
 	}
 
@@ -255,8 +255,6 @@ public:
 	void TestInit() override
 	{
 		CommandBase::winch->getCurrent();
-		Command* autonomousCommand;
-
 	}
 
 	void TestPeriodic() override

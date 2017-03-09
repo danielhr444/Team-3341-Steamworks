@@ -14,7 +14,7 @@ WinchMove::WinchMove() {
 	//_talon->SetControlMode(CANSpeedController::kPercentVbus);
 	//_talon->SetFeedbackDevice(CANTalon::CtreMagEncoder_Relative);
 	// _talon->ConfigLimitMode(CANSpeedController::kLimitMode_SrxDisableSwitchInputs);
-
+	Initialize();
 }
 
 // Called just before this Command runs the first time

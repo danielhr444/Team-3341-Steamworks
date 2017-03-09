@@ -28,12 +28,13 @@ const double ENCODER_LEFT_1 = 2;
 const double ENCODER_LEFT_2 = 3;
 
 //Talon IDS: Winch 1, Shooter 2, Intake 3
+const int WINCH_PDP_PORT = 0;
+const int WINCH_CAN_ID = 0;
+const int MOTORPORT = 0;
+
 const double SHOOTER = 2; //change to 1 for RoboRIO #1  //shooter 2
 const double SHOOTER_ANGLE = 33; //set this to the constant angle
 const double TARGET_HEIGHT = 7; //whatever the height is
 
-const int WINCH_PDP_PORT = 15;
-const int WINCH_CAN_ID = 1;
-const int MOTORPORT = 0;
-
+const double ACQUIRER = 4; //change to 1 for RoboRIO #1  //shooter 2
 #endif

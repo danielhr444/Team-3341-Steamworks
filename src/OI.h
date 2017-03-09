@@ -18,6 +18,7 @@ private:
 	void driveButtons();
 	void winchButtons();
 	void shooterButtons();
+	void acquirerButtons();
 
 public:
 	OI();

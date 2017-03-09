@@ -5,6 +5,7 @@ OpenGate::OpenGate() {
 	// eg. Requires(Robot::chassis.get());
 	Requires(shooter);
 	shooter->setServo(0);
+	finished = false;
 }
 
 // Called just before this Command runs the first time
@@ -15,11 +16,12 @@ void OpenGate::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void OpenGate::Execute() {
 	shooter->setServo(170);
+	finished = true;
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool OpenGate::IsFinished() {
-	return true;
+	return finished;
 }
 
 // Called once after isFinished returns true

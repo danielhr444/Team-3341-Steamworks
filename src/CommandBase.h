@@ -9,6 +9,7 @@
 #include "Subsystems/DriveTrain.h"
 #include "Subsystems/Shooter.h"
 #include "Subsystems/Winch.h"
+#include "Subsystems/Acquirer.h"
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -26,6 +27,7 @@ public:
 	static DriveTrain* drive;
 	static Shooter* shooter;
 	static Winch* winch;
+	static Acquirer* acquirer;
 	static std::unique_ptr<OI> oi;
 
 	/* Instantiate static data.

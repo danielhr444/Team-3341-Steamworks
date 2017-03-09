@@ -2,21 +2,22 @@
 
 CloseGate::CloseGate() {
 	Requires(shooter);
+	finished = false;
 }
 
 // Called just before this Command runs the first time
 void CloseGate::Initialize() {
-
 }
 
 // Called repeatedly when this Command is scheduled to run
 void CloseGate::Execute() {
 	shooter->setServo(0);
+	finished = true;
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool CloseGate::IsFinished() {
-	return true;
+	return finished;
 }
 
 // Called once after isFinished returns true

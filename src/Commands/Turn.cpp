@@ -27,7 +27,7 @@ void Turn::Initialize() {
 }
 
 void Turn::Execute() {
-	double current_angle = -drive->getGyroAngle();
+	double current_angle = drive->getGyroAngle(); //TODO: Negative if mounted right side up, positive if upside down
 	double rotateVal = anglePID->Tick(current_angle);
 
 	std::cout << "gyro angle: " << current_angle << std::endl;
