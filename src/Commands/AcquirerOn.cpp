@@ -9,25 +9,25 @@ AcquirerOn::AcquirerOn(bool on) {
 }
 
 void AcquirerOn::Initialize() {
-	SetTimeout(3);
-	finished = false;
+	//SetTimeout(3);
+	//finished = false;
 }
 
 void AcquirerOn::Execute() {
 	if(mOn)
-		acquirer->setSpeed(1000);
+		acquirer->setSpeed(1);
 	else
-		acquirer->setSpeed(0);
-	finished = true;
+		finished = true;
 
 }
 
 bool AcquirerOn::IsFinished() {
-	return finished || IsTimedOut();
+	//return IsTimedOut();
+	return false;
 }
 
 void AcquirerOn::End() {
-
+	acquirer->setSpeed(0);
 }
 
 void AcquirerOn::Interrupted() {

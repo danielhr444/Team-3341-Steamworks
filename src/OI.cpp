@@ -9,15 +9,20 @@
 #include <Commands/OpenGate.h>
 #include <Commands/AcquirerOn.h>
 #include "OI.h"
+
+#define DANIEL
+
 using namespace frc;
 
 OI::OI() :
 		driveStickLeft(new Joystick(2)), driveStickRight(new Joystick(1)), operatorStick(
 				new Joystick(0)) {
 	reversed = true;
+	acquirerButtons();
 	shooterButtons();
 	driveButtons();
 	winchButtons();
+
 	// 	: THis doesn't work :'(
 	// TODO: FInd good place for these buttons
 	//Button* stopWinchPositionPIDButton = new JoystickButton(driveStickRight, 4);
@@ -30,7 +35,6 @@ OI::OI() :
 
 	//Button* togRev = new JoystickButton(driveStickRight, 1);
 	//togRev->WhenPressed(new ToggleReverse());
-
 }
 
 
@@ -47,10 +51,17 @@ void OI::driveButtons() {
 	toggleDriveDirection->WhenReleased(new SetDriveReverse()); //drive reverse for winch
 }
 void OI::winchButtons() {
+#ifdef DANIEL
 	Button* positionControl = new JoystickButton(operatorStick, 1); //winch position control
 	positionControl->WhenPressed(new PositionControl());
+	positionControl->WhenReleased(new WinchMove());
+#endif
+#ifdef ISHA
+	Button* positionControl = new JoystickButton(operatorStick, 11); //winch position control
+	positionControl->WhenPressed(new PositionControl());
 	Button* posCon2 = new JoystickButton(operatorStick, 2);
-	posCon2->WhenPressed(new WinchMove); //move winch
+	posCon2->WhenPressed(new WinchMove()); //move winch
+#endif
 }
 
 void OI::shooterButtons() {

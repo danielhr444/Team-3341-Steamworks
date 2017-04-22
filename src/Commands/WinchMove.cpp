@@ -18,9 +18,7 @@ WinchMove::WinchMove() {
 }
 
 // Called just before this Command runs the first time
-void WinchMove::Initialize() {
-
-}
+void WinchMove::Initialize() {}
 
 // Called repeatedly when this Command is scheduled to run
 void WinchMove::Execute() {

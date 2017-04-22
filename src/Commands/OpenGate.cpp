@@ -4,7 +4,7 @@ OpenGate::OpenGate() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(shooter);
-	shooter->setServo(0);
+	//shooter->setServo(65);
 	finished = false;
 }
 

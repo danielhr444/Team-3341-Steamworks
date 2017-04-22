@@ -11,7 +11,7 @@ void CloseGate::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void CloseGate::Execute() {
-	shooter->setServo(0);
+	shooter->setServo(75);
 	finished = true;
 }
 

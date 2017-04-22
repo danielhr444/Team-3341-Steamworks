@@ -2,12 +2,12 @@
 #include "../RobotMap.h"
 using namespace frc;
 
-Acquirer::Acquirer() :
-		Subsystem("Acquirer"), acquirer(new CANTalon(ACQUIRER)) {
-	acquirer->SetControlMode(CANSpeedController::kPercentVbus);
-	acquirer->SetFeedbackDevice(CANTalon::CtreMagEncoder_Relative);
-	//acquirer->ConfigLimitMode(CANSpeedController::kLimitMode_SrxDisableSwitchInputs);
-	// encoder = new Encoder(ACQUIRERENCODERLEFT); // ENCODER is the pin number for the encoder
+Acquirer::Acquirer() : Subsystem("Acquirer") {
+	acquirer = new CANTalon(ACQUIRER);
+//	acquirer->SetControlMode(CANSpeedController::kPercentVbus);
+//	acquirer->SetFeedbackDevice(CANTalon::CtreMagEncoder_Relative);
+//	acquirer->ConfigLimitMode(CANSpeedController::kLimitMode_SrxDisableSwitchInputs);
+//	 encoder = new Encoder(ACQUIRERENCODERLEFT); // ENCODER is the pin number for the encoder
 }
 
 void Acquirer::setSpeed(double speed) {

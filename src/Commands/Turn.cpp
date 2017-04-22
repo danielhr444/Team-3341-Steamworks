@@ -20,6 +20,8 @@ void Turn::Initialize() {
 	SetTimeout(5);
 	if(pointerUsed)
 		angle = *pAngle;
+	//angle* = 0.66666;
+
 	std::cout << "Angle Set point:\t" << angle << std::endl;
 	drive->resetEncoders();
 	drive->resetGyro();

@@ -105,9 +105,9 @@ public:
 
 		CommandBase::initialize();
 
-		chooser.AddDefault("Autonomous Left", new AutonomousSide(true)); // true signifies left side
-		chooser.AddObject("Autonomous Right", new AutonomousSide(false)); // false signifies right side
-		chooser.AddObject("Autonomous Center", new AutonomousCenter());
+		chooser.AddDefault("Autonomous Center 1", new AutonomousCenter()); // true signifies left side
+		chooser.AddObject("Autonomous Center 2", new AutonomousCenter()); // false signifies right side
+		chooser.AddObject("Autonomous Center 3 (All the same)", new AutonomousCenter());
 
 		frc::SmartDashboard::PutData("Auto Modes", &chooser);
 
@@ -141,8 +141,8 @@ public:
 		CommandBase::drive->gyro->periodicProcessing(startupTime);
 		frc::Scheduler::GetInstance()->Run();
 
-//		frc::SmartDashboard::PutNumber("Gyro",
-//				CommandBase::drive->getGyroAngle());
+		frc::SmartDashboard::PutNumber("Gyro",
+				CommandBase::drive->getGyroAngle());
 //		frc::SmartDashboard::PutNumber("EncoderTest",
 //				CommandBase::drive->getLeftEncoderDistance());
 //		frc::SmartDashboard::PutNumber("EncoderRight",
@@ -199,7 +199,6 @@ public:
 	{
 		CommandBase::drive->gyro->periodicProcessing(startupTime);
 		frc::Scheduler::GetInstance()->Run();
-
 	}
 
 	void TeleopInit() override
@@ -249,7 +248,6 @@ public:
 				NetworkTablesInterface::getGearAltitude());
 		frc::SmartDashboard::PutNumber("CVGearAzimuth",
 				NetworkTablesInterface::getGearAzimuth());
-
 	}
 
 	void TestInit() override
