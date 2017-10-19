@@ -8,7 +8,7 @@
 #include <SmartDashboard/SendableChooser.h>
 #include <SmartDashboard/SmartDashboard.h>
 #include "WPILib.h"
-#include "CANTalon.h" /* necessary as of FRC2017, comment out for earler seasons */
+#include "ctrlib/CANTalon.h" /* necessary as of FRC2017, comment out for earler seasons */
 #include "../CommandBase.h"
 using namespace frc;
 

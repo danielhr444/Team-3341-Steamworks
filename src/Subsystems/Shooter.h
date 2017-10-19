@@ -3,7 +3,7 @@
 #include <WPILib.h>
 #include "Commands/Subsystem.h"
 #include "Encoder.h"
-#include "CANTalon.h"
+#include "ctrlib/CANTalon.h"
 using namespace frc;
 //using namespace
 class Shooter: public Subsystem {

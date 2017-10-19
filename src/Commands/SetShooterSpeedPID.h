@@ -5,7 +5,7 @@
 #include "OI.h"
 #include "../Subsystems/Shooter.h"
 #include "../Utilities/WVPIDController.h"
-#include "CANTalon.h"
+#include "ctrlib/CANTalon.h"
 
 using namespace frc;
 
