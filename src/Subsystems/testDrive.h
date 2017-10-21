@@ -12,10 +12,19 @@ private:
 	// for methods that implement subsystem capabilities
 	TalonSRX* leftMotor;
 	TalonSRX* rightMotor;
+	Encoder* leftEncoder;
+	Encoder* rightEncoder;
+	int ticksToDistance;
+	double mult;
 
 public:
 	testDrive();
+	~testDrive();
 	void InitDefaultCommand();
+	void resetEncoders();
+	void getDistance();
+	void setSpeedLeft(double speed);
+	void setSpeedRight(double speed);
 };
 
 #endif  // testDrive_H
