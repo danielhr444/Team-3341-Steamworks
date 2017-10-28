@@ -13,7 +13,8 @@ using namespace frc;
 // line should be repeated for each subsystem in the project.
 //std::unique_ptr<ExampleSubsystem> CommandBase::exampleSubsystem =
 //		std::make_unique<ExampleSubsystem>();
-DriveTrain* CommandBase::drive = nullptr;
+//DriveTrain* CommandBase::drive = nullptr;
+testDrive* CommandBase::drive = nullptr;
 Shooter* CommandBase::shooter = nullptr;
 Winch* CommandBase::winch = nullptr;
 Acquirer* CommandBase::acquirer = nullptr;
@@ -28,7 +29,8 @@ CommandBase::CommandBase(const std::string &name) :
  * It is important that subsystems are constructed before OI, which creates commands.
  */
 void CommandBase::initialize() {
-	drive = new DriveTrain();
+	drive = new testDrive();
+	//drive = new DriveTrain();
 	shooter = new Shooter();
 	winch = new Winch(WINCH_PDP_PORT, WINCH_CAN_ID);
 	acquirer = new Acquirer();
