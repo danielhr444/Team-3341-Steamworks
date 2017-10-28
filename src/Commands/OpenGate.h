@@ -10,6 +10,7 @@ public:
 	void Execute();bool IsFinished();
 	void End();
 	void Interrupted();
+	bool finished;
 };
 
 #endif  // OpenGate_H

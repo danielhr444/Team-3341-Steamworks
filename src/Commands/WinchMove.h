@@ -10,7 +10,8 @@ class WinchMove: public CommandBase {
 
 private:
 	Joystick* winchMove;
-	CANTalon* _talon;bool _lastButton1;
+	CANTalon* _talon;
+	bool _lastButton1;
 	double setPoint;
 	const double DEAD_SPACE_EPSILON = 0.2;
 

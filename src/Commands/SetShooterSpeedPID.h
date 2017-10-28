@@ -10,10 +10,13 @@
 using namespace frc;
 
 class SetShooterSpeed: public CommandBase {
+	//bool mech;
 public:
 	SetShooterSpeed();
+	//SetShooterSpeed(bool mechanism);
 	void Initialize();
-	void Execute();bool IsFinished();
+	void Execute();
+	bool IsFinished();
 	void End();
 	void Interrupted();
 	double findSpeed(double dist);

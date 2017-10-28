@@ -20,6 +20,8 @@ void Turn::Initialize() {
 	SetTimeout(5);
 	if(pointerUsed)
 		angle = *pAngle;
+	//angle* = 0.66666;
+
 	std::cout << "Angle Set point:\t" << angle << std::endl;
 	drive->resetEncoders();
 	drive->resetGyro();
@@ -27,7 +29,7 @@ void Turn::Initialize() {
 }
 
 void Turn::Execute() {
-	double current_angle = -drive->getGyroAngle();
+	double current_angle = drive->getGyroAngle(); //TODO: Negative if mounted right side up, positive if upside down
 	double rotateVal = anglePID->Tick(current_angle);
 
 	std::cout << "gyro angle: " << current_angle << std::endl;

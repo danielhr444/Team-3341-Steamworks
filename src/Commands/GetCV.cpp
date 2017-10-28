@@ -11,7 +11,7 @@ void GetCV::Initialize() {
 	finished = false;
 
 	// Give temporary values in case CV cannot see anything
-	*mDistance = 39;
+	*mDistance = 32;
 	*mAzimuth = 0;
 
 	// Set 3 second timeout, in case CV doesn't see

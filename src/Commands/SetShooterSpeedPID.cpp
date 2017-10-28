@@ -13,7 +13,7 @@ SetShooterSpeed::SetShooterSpeed() {
 // Called just before this Command runs the first time
 void SetShooterSpeed::Initialize() {
 	// TODO: figure out goalSpeed
-	goalSpeed = -15000; //2130
+	goalSpeed = -0.8; //-15000
 	shooter->setPIDConstants(1, 1, 0, 0);
 
 }
@@ -39,3 +39,5 @@ void SetShooterSpeed::End() {
 void SetShooterSpeed::Interrupted() {
 
 }
+
+

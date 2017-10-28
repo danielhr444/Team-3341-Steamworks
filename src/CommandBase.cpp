@@ -17,6 +17,7 @@ using namespace frc;
 testDrive* CommandBase::drive = nullptr;
 Shooter* CommandBase::shooter = nullptr;
 Winch* CommandBase::winch = nullptr;
+Acquirer* CommandBase::acquirer = nullptr;
 std::unique_ptr<OI> CommandBase::oi;
 
 CommandBase::CommandBase(const std::string &name) :
@@ -32,5 +33,6 @@ void CommandBase::initialize() {
 	//drive = new DriveTrain();
 	shooter = new Shooter();
 	winch = new Winch(WINCH_PDP_PORT, WINCH_CAN_ID);
+	acquirer = new Acquirer();
 	oi = std::make_unique<OI>();
 }
